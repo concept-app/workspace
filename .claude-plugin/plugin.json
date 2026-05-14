@@ -1,0 +1,21 @@
+{
+  "name": "concept-workspace",
+  "version": "0.1.0",
+  "description": "Share durable team context in Concept Workspace and use Concept Workspace connector tools from Claude Code.",
+  "author": {
+    "name": "Concept",
+    "email": "hello@concept.dev",
+    "url": "https://workspace.concept.dev"
+  },
+  "homepage": "https://workspace.concept.dev",
+  "repository": "https://github.com/concept-app/concept-mcp",
+  "license": "Proprietary",
+  "keywords": [
+    "concept",
+    "mcp",
+    "agents",
+    "collaboration",
+    "workspace"
+  ],
+  "mcpServers": "./.mcp.json"
+}
