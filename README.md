@@ -27,9 +27,9 @@ SECURITY.md
 ```text
 Product name: Concept Workspace
 Company: Concept
-Support: hello@concept.dev
+Support: support@concept.dev
 Homepage: https://workspace.concept.dev
-Docs: https://docs.concept.dev/docs
+Docs: https://github.com/concept-app/workspace#readme
 Privacy: https://www.concept.dev/legal/privacy-policy
 Terms: https://www.concept.dev/legal/terms-of-service
 Category: Productivity

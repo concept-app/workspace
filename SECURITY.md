@@ -1,6 +1,6 @@
 # Security
 
-Report security issues to `hello@concept.dev`.
+Report security issues to `support@concept.dev`.
 
 Please do not open public GitHub issues for suspected vulnerabilities, credential exposure, account access problems, or private customer data.
 
