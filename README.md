@@ -1,4 +1,4 @@
-# Concept Workspace MCP
+# Concept Workspace
 
 Public plugin and connector package for Concept Workspace.
 
@@ -43,7 +43,7 @@ Install the plugin from this repo after it is public or available to your
 authenticated GitHub user:
 
 ```bash
-codex plugins install https://github.com/concept-app/concept-mcp.git
+codex plugins install https://github.com/concept-app/workspace.git
 codex mcp login concept
 ```
 
@@ -70,7 +70,7 @@ For ChatGPT and Claude connector submission, use:
 
 ```text
 MCP endpoint: https://workspace-api.concept.dev/mcp
-Public repo: https://github.com/concept-app/concept-mcp
+Public repo: https://github.com/concept-app/workspace
 ```
 
 Reviewer credentials, passwords, and 2FA/TOTP details must be provided only in
