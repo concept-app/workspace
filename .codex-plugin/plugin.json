@@ -1,0 +1,43 @@
+{
+  "name": "concept-workspace",
+  "version": "0.1.0",
+  "description": "Share durable team context in Concept Workspace and use Concept Workspace connector tools from local agents.",
+  "author": {
+    "name": "Concept",
+    "email": "hello@concept.dev",
+    "url": "https://workspace.concept.dev"
+  },
+  "homepage": "https://workspace.concept.dev",
+  "repository": "https://github.com/concept-app/workspace",
+  "license": "Proprietary",
+  "keywords": [
+    "concept",
+    "mcp",
+    "agents",
+    "collaboration",
+    "workspace"
+  ],
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Concept Workspace",
+    "shortDescription": "Publish team playbooks and use Concept Workspace connector tools.",
+    "longDescription": "Use Concept Workspace as the shared workspace for local Codex, Claude Code, and other agent sessions. Publish durable playbooks, notes, prompts, and session summaries, then discover and call Concept Workspace-brokered connector tools without exposing credentials locally.",
+    "developerName": "Concept",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write",
+      "MCP"
+    ],
+    "websiteURL": "https://workspace.concept.dev",
+    "privacyPolicyURL": "https://www.concept.dev/legal/privacy-policy",
+    "termsOfServiceURL": "https://www.concept.dev/legal/terms-of-service",
+    "defaultPrompt": [
+      "Publish this workflow to Concept Workspace.",
+      "Fetch the onboarding playbook.",
+      "Find connector tools for this task."
+    ],
+    "brandColor": "#111827"
+  }
+}
