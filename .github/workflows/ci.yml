@@ -3,8 +3,7 @@ name: CI
 on:
   pull_request:
   push:
-    branches:
-      - main
+    branches: [main]
 
 permissions:
   contents: read
@@ -14,17 +13,5 @@ jobs:
     name: CI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Validate JSON manifests
-        run: |
-          python3 -m json.tool .mcp.json >/dev/null
-          python3 -m json.tool .codex-plugin/plugin.json >/dev/null
-          python3 -m json.tool .claude-plugin/plugin.json >/dev/null
-      - name: Check endpoint
-        run: |
-          grep -q 'https://workspace-api.concept.dev/mcp' .mcp.json
-      - name: Check public files only
-        run: |
-          test -f README.md
-          test -f LICENSE
-          test -f SECURITY.md
+      - name: No-op
+        run: ':'

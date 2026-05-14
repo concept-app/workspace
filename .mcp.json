@@ -1,9 +1,0 @@
-{
-  "mcpServers": {
-    "concept": {
-      "type": "http",
-      "url": "https://workspace-api.concept.dev/mcp",
-      "note": "Concept Workspace production MCP server. Uses Concept Workspace OAuth/login to authenticate the user and select a workspace before exposing files, skills, uploads, and connector tools."
-    }
-  }
-}
