@@ -6,21 +6,21 @@ description: Use when the user says "write a handoff", "another agent/teammate n
 # Handoff
 
 Make the current work transferable to a fresh agent or teammate who has
-no access to this chat. Use the Workspace MCP file tools for storage; this skill defines the handoff contract.
+no access to this chat. See the `concept-workspace` skill for MCP tool
+mechanics; this skill defines the handoff contract.
 
 ## When to use
 
-- Switching agents (Claude Code → Codex, Claude Code → human teammate).
+- Switching agents (Claude Code -> Codex, Claude Code -> human teammate).
 - Ending a long session that will resume later.
 - Pausing mid-task ("come back to this Monday").
 
-For a quick recap with no continuation, use `capture` with
-`kind: note` instead. Reserve `handoff` for transferable
-work-in-progress.
+For a quick recap with no continuation, use `capture` to save a `doc`
+instead. Reserve `handoff` for transferable work-in-progress.
 
 ## Storage
 
-- `kind`: `session_summary`
+- `kind`: `doc`
 - `slug`: `<task-or-feature>-handoff-<YYYYMMDD>`
 - If a prior handoff for the same task exists, update it via
   `workspace_file_upsert` with `expectedUpdatedAt`. Do not create
@@ -29,10 +29,10 @@ work-in-progress.
 ## Required template
 
 ```md
-# <Task Name> — Handoff <YYYY-MM-DD>
+# <Task Name> - Handoff <YYYY-MM-DD>
 
 ## Goal
-<single sentence — what success looks like>
+<single sentence - what success looks like>
 
 ## Current State
 <done, in flight, blocked>
@@ -44,7 +44,7 @@ work-in-progress.
 <repo paths, Workspace slugs, PR or branch links>
 
 ## Commands Run / Validation
-<tests, lints, builds, deploys executed — and their result>
+<tests, lints, builds, deploys executed - and their result>
 
 ## Blockers / Open Questions
 <anything the next agent needs unstuck or answered>
@@ -63,7 +63,7 @@ work-in-progress.
 - Reference repo paths and Workspace slugs, not "the file we just
   edited."
 - State commands and their result, not "I ran the tests."
-- If a section is empty, write "None" — never delete the heading.
+- If a section is empty, write "None" - never delete the heading.
 - No secrets, tokens, or raw API keys in the handoff body.
 
 ## After
