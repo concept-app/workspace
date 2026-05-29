@@ -1,34 +1,33 @@
 ---
 name: capture
-description: Use when the user says "save this", "document this", "put this in Workspace", "share with the team", or otherwise asks to make a chat output durable. Selects the right Concept Workspace file kind, slug, and shape.
+description: Use when the user says "save this", "document this", "put this in Workspace", "share with the team", or otherwise asks to make a chat output durable. Selects the right Concept Workspace file shape and slug.
 ---
 
 # Capture
 
-Turn a useful chat output into a durable Concept Workspace file. Use the
-Workspace MCP file tools for storage; this skill picks shape and routing.
+Turn a useful chat output into a durable Concept Workspace file. See
+the `concept-workspace` skill for MCP tool mechanics; this skill picks
+shape and routing.
 
-## Pick the kind
+## Pick the route
 
-| User intent                                | `kind`            |
-| :----------------------------------------- | :---------------- |
-| Reference doc, explanation, FAQ            | `doc`             |
-| Step-by-step process or runbook            | `playbook`        |
-| Prompt or system-prompt template           | `prompt`          |
-| Quick note, scratch, status                | `note`            |
-| Product or technical specification         | `spec`            |
-| Wrap-up of a run or conversation           | `session_summary` |
+| User intent                                | Route              |
+| :----------------------------------------- | :----------------- |
+| Durable reference, explanation, FAQ        | `kind: doc`        |
+| Prompt or system-prompt template           | `kind: doc`        |
+| Quick note, scratch, status                | `kind: doc`        |
+| Product or technical specification         | `kind: doc`        |
+| Wrap-up of a run or conversation           | `kind: doc`        |
 | Reusable agent instructions                | use `skill_upsert` |
 
-If the intent is reusable agent behavior, do not capture as a file —
-push it through the shared skill workflow instead. If
+If the intent is reusable agent behavior, do not capture as a file -
+push as a shared skill via the `concept-workspace` skill instead. If
 the intent is a transferable mid-task state, delegate to the `handoff`
-skill. If the intent is a repeatable team process, delegate to the
-`playbook-builder` skill.
+skill. If the intent is a repeatable team process, capture it as a doc.
 
 ## Before writing
 
-1. Call `workspace_file_list` filtered by the chosen `kind`. If a
+1. Call `workspace_file_list({ kind: "doc", search: "<topic>" })`. If a
    relevant file exists, load it with `workspace_file_get` and update
    via `workspace_file_upsert` with `expectedUpdatedAt`. Do not create
    a duplicate.
@@ -41,7 +40,7 @@ skill. If the intent is a repeatable team process, delegate to the
 # <Title>
 
 ## Purpose
-<one or two sentences — why this exists>
+<one or two sentences - why this exists>
 
 ## Body
 <the actual content>
@@ -58,4 +57,4 @@ scaffolding. Distill instead of pasting.
 
 ## After
 
-Report the resulting `slug` and `kind` so the user can find it again.
+Report the resulting `slug` so the user can find it again.
